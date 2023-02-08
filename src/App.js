@@ -1,43 +1,47 @@
-
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import './App.css';
-import Header from './components/Header/Header';
-import Login from './components/Login/Login';
-import ManageInventory from './components/ManageInventory/ManageInventory';
-import Order from './components/Order/Order';
-import OrderReview from './components/OrderReview/OrderReview';
-import Main from './layout/Main';
-import { ProductsAndCartLoader } from './loaders/ProductsAndCartLoader';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./App.css";
+import Header from "./components/Header/Header";
+import Login from "./components/Login/Login";
+import ManageInventory from "./components/ManageInventory/ManageInventory";
+import Order from "./components/Order/Order";
+import OrderReview from "./components/OrderReview/OrderReview";
+import SignUp from "./components/SignUp/SignUp";
+import Main from "./layout/Main";
+import { ProductsAndCartLoader } from "./loaders/ProductsAndCartLoader";
 
 function App() {
   const router = createBrowserRouter([
     {
-      path: '/',
+      path: "/",
       element: <Main></Main>,
       children: [
         {
-          path: '/',
+          path: "/",
           loader: () => {
-            return fetch('products.json');
+            return fetch("products.json");
           },
-          element: <Order></Order>
+          element: <Order></Order>,
         },
         {
-          path: 'order-review',
+          path: "order-review",
           loader: ProductsAndCartLoader,
-          element: <OrderReview></OrderReview>
+          element: <OrderReview></OrderReview>,
         },
         {
-          path: 'manage-inventory',
-          element: <ManageInventory></ManageInventory>
+          path: "manage-inventory",
+          element: <ManageInventory></ManageInventory>,
         },
         {
-          path: 'login',
-          element: <Login></Login>
-        }
-      ]
-    }
-  ])
+          path: "login",
+          element: <Login></Login>,
+        },
+        {
+          path: "signup",
+          element: <SignUp></SignUp>,
+        },
+      ],
+    },
+  ]);
   return (
     <div className="App">
       <RouterProvider router={router} />

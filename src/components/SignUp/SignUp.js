@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Login.css";
+import "./SignUp.css";
 
-const Login = () => {
+const SignUp = () => {
   return (
     <div className="login-container">
-      <h2>Login </h2>
+      <h2>Sign Up </h2>
       <form className="form-container">
         <div className="form-control">
           <label htmlFor="email">Email</label>
@@ -15,16 +15,20 @@ const Login = () => {
           <label htmlFor="password">Password</label>
           <input type="password" name="password" id="password" required />
         </div>
-        <input className="login-btn" type="submit" value="Login" />
+        <div className="form-control">
+          <label htmlFor="confirm">Confirm Password</label>
+          <input type="password" name="confirm" id="confirm" required />
+        </div>
+        <input className="login-btn" type="submit" value="Sign Up" />
       </form>
       <p>
-        <span className="sign-up-text">New to amazon? </span>
-        <Link to="/signup">
-          <span className="signUp-link-text">Create New Account</span>
+        <span className="sign-up-text">Already have an account? </span>
+        <Link to="/login">
+          <span className="signUp-link-text">Login</span>
         </Link>
       </p>
     </div>
   );
 };
 
-export default Login;
+export default SignUp;
