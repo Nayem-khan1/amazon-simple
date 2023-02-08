@@ -1,0 +1,26 @@
+.header-container{
+    background-color: #1C2B35;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    justify-content: space-between;
+}
+.header-logo{
+    padding: 20px 0 20px 115px;
+}
+.header-logo img{
+    width: 140px;
+    height: 43px;
+}
+
+.nav-bar a{
+    text-decoration: none;
+    color: white;
+    margin-right: 35px;
+}
+.nav-bar a:hover{
+    color: orange;
+}
+.active {
+    color: orange;
+}

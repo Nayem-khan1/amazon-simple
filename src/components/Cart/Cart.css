@@ -1,0 +1,16 @@
+.cart-container{
+    position: sticky;
+    top: 0;
+}
+.cart-container h2{
+    text-align: center;
+    margin-top: 28px;
+}
+.product-details{
+    margin-left: 25px;
+    margin-top: 50px;
+    line-height: 1.5em;
+}
+.grand-total{
+    font-size: 21px;
+}
